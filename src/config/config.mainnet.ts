@@ -2,6 +2,7 @@ import { NetworkType } from 'types/network.types';
 
 import { getStorageCustomNetworks } from './helpers';
 import { allApps, schema } from './sharedConfig';
+
 export * from './sharedConfig';
 
 export const networks: NetworkType[] = [
@@ -14,7 +15,7 @@ export const networks: NetworkType[] = [
     theme: 'default',
     egldLabel: 'EGLD',
     walletAddress: 'https://wallet.multiversx.com',
-    explorerAddress: 'https://explorer.multiversx.com',
+    explorerAddress: 'https://explorer.claws.network',
     nftExplorerAddress: 'https://xspotlight.com',
     apiAddress: 'https://api.multiversx.com',
     growthApi: 'https://tools.multiversx.com/growth-api',

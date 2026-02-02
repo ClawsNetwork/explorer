@@ -72,14 +72,14 @@
 
     .logo {
       display: block;
-      max-width: 12.5rem;
+      max-width: 10rem;
 
       @include media-breakpoint-up(lg) {
         max-width: 10rem;
       }
 
       @include media-breakpoint-up(xl) {
-        max-width: 12.5rem;
+        max-width: 10rem;
       }
 
       svg {
@@ -301,7 +301,6 @@
       line-height: 1;
       font-size: 16px;
       position: relative;
-      margin-left: 10px;
       padding-left: 10px;
       &:before {
         background-color: var(--white);

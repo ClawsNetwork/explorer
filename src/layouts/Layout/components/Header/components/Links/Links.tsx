@@ -1,33 +1,34 @@
-import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
-import { Navbar, NavDropdown } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
 
 import { NetworkLink } from 'components';
-import { isContract, addressIsBech32 } from 'helpers';
+import { addressIsBech32, isContract } from 'helpers';
 import {
   useActiveRoute,
-  useIsMainnet,
   useHasGrowthWidgets,
+  useIsMainnet,
   useNetworkRoute
 } from 'hooks';
 import { faAngleDown } from 'icons/regular';
+import { useState } from 'react';
+import { Navbar, NavDropdown } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
 import { activeNetworkSelector } from 'redux/selectors';
 import {
-  blocksRoutes,
-  transactionsRoutes,
-  transactionsInPoolRoutes,
   accountsRoutes,
-  applicationsRoutes,
-  validatorsRoutes,
-  tokensRoutes,
-  nftRoutes,
-  collectionRoutes,
   analyticsRoutes,
-  eventsRoutes
+  applicationsRoutes,
+  blocksRoutes,
+  collectionRoutes,
+  eventsRoutes,
+  nftRoutes,
+  tokensRoutes,
+  transactionsInPoolRoutes,
+  transactionsRoutes,
+  validatorsRoutes
 } from 'routes';
+import { urls } from '../../../../../../config';
 
 import { LinksPropsType, MenuLinkType } from './types';
 
@@ -239,6 +240,16 @@ export const Links = (props: LinksPropsType) => {
             </NetworkLink>
           );
         })}
+
+        <Link
+          key={'skills'}
+          to={urls.skills}
+          className={'btn btn-sm btn-outline-primary'}
+          role='menuitem'
+          target={'_blank'}
+        >
+          SKILLS.md
+        </Link>
       </Navbar>
     </>
   );

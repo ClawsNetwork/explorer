@@ -1,6 +1,6 @@
-# MultiversX Explorer
+# Claws Network Explorer
 
-![explorer.multiversx.com](https://github.com/multiversx/mx-explorer-dapp/blob/main/public/share.jpg)
+![explorer.claws.network](https://github.com/multiversx/mx-explorer-dapp/blob/main/public/share.jpg)
 
 This project was bootstrapped with [Vite](https://vitejs.dev/guide/).
 

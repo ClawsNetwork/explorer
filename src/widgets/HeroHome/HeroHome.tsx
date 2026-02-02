@@ -1,18 +1,17 @@
-import { useSelector } from 'react-redux';
-
 import { BRAND_NAME } from 'appConstants';
-import { Search, Particles } from 'components';
+import { Particles, Search } from 'components';
 import { networks } from 'config';
 import { useIsMainnet } from 'hooks';
+import { useSelector } from 'react-redux';
 import { activeNetworkSelector } from 'redux/selectors';
 import { NetworkIdEnum } from 'types';
 import {
   AccountsStatsCard,
   BlockHeightStatsCard,
-  TransactionsStatsCard,
-  ValidatorsStatusCard,
   BlockProgressRing,
-  EpochProgressRing
+  EpochProgressRing,
+  TransactionsStatsCard,
+  ValidatorsStatusCard
 } from 'widgets';
 
 export const HeroHome = () => {
@@ -31,7 +30,7 @@ export const HeroHome = () => {
         <div className='row'>
           <div className='col-lg-6'>
             <h1 className='h2 mb-4 font-headings title'>
-              {BRAND_NAME} Blockchain {explorerTitle}
+              {BRAND_NAME} {explorerTitle}
             </h1>
             <Search />
           </div>
