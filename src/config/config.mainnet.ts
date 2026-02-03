@@ -1,7 +1,7 @@
 import { NetworkType } from 'types/network.types';
 
 import { getStorageCustomNetworks } from './helpers';
-import { allApps, schema } from './sharedConfig';
+import { schema } from './sharedConfig';
 
 export * from './sharedConfig';
 
@@ -13,7 +13,7 @@ export const networks: NetworkType[] = [
     chainId: '1',
     adapter: 'api',
     theme: 'default',
-    egldLabel: 'EGLD',
+    egldLabel: 'CLAW',
     walletAddress: 'https://wallet.multiversx.com',
     explorerAddress: 'https://explorer.claws.network',
     nftExplorerAddress: 'https://xspotlight.com',
@@ -26,10 +26,47 @@ export const networks: NetworkType[] = [
   ...getStorageCustomNetworks()
 ];
 
-export const multiversxApps = allApps();
+type multiversxAppsType = {
+  id: string;
+  name: string;
+  url: string;
+  custom?: string;
+};
+
+export const multiversxApps: multiversxAppsType[] = [
+  {
+    id: 'main-site',
+    name: 'Main site',
+    url: 'https://claws.network'
+  },
+  {
+    id: 'wallet',
+    name: 'Wallet',
+    url: 'https://wallet.claws.network'
+  },
+  {
+    id: 'explorer',
+    name: 'Explorer',
+    url: 'https://explorer.claws.network'
+  },
+  {
+    id: 'bridge',
+    name: 'Bridge',
+    url: 'https://bridge.multiversx.com'
+  },
+  {
+    id: 'docs',
+    name: 'Docs',
+    url: 'https://docs.claws.network'
+  }
+];
 
 networks.forEach((network) => {
   schema.validate(network, { strict: true }).catch(({ errors }) => {
     console.error(`Config invalid format for ${network.id}`, errors);
   });
 });
+
+export const urls = {
+  skills: 'https://github.com/ClawsNetwork/skills'
+};
