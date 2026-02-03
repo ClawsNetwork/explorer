@@ -17,7 +17,7 @@ export const networks: NetworkType[] = [
     walletAddress: 'https://wallet.claws.network',
     explorerAddress: 'https://claws.network',
     nftExplorerAddress: 'https://xspotlight.com',
-    apiAddress: 'https://api.multiversx.com',
+    apiAddress: 'https://api.claws.network',
     growthApi: 'https://tools.multiversx.com/growth-api',
     hasExchangeData: true
   },
