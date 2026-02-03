@@ -15,7 +15,7 @@ export const networks: NetworkType[] = [
     theme: 'default',
     egldLabel: 'CLAW',
     walletAddress: 'https://wallet.claws.network',
-    explorerAddress: 'https://explorer.claws.network',
+    explorerAddress: 'https://claws.network',
     nftExplorerAddress: 'https://xspotlight.com',
     apiAddress: 'https://api.multiversx.com',
     growthApi: 'https://tools.multiversx.com/growth-api',
@@ -42,7 +42,7 @@ export const multiversxApps: multiversxAppsType[] = [
   {
     id: 'explorer',
     name: 'Explorer',
-    url: 'https://explorer.claws.network'
+    url: 'https://claws.network'
   },
   {
     id: 'docs',

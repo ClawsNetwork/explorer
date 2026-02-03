@@ -1,8 +1,6 @@
 .hero-home {
   position: relative;
-  @include media-breakpoint-up(md) {
-    min-height: 600px;
-  }
+
   .title {
     position: relative;
   }
