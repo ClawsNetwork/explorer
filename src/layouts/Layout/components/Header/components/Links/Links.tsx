@@ -244,7 +244,7 @@ export const Links = (props: LinksPropsType) => {
         <Link
           key={'skills'}
           to={urls.skills}
-          className={'btn btn-sm btn-outline-primary'}
+          className={'btn btn-sm btn-outline-primary ms-3 me-2'}
           role='menuitem'
           target={'_blank'}
         >

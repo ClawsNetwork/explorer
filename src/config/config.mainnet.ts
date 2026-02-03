@@ -14,7 +14,7 @@ export const networks: NetworkType[] = [
     adapter: 'api',
     theme: 'default',
     egldLabel: 'CLAW',
-    walletAddress: 'https://wallet.multiversx.com',
+    walletAddress: 'https://wallet.claws.network',
     explorerAddress: 'https://explorer.claws.network',
     nftExplorerAddress: 'https://xspotlight.com',
     apiAddress: 'https://api.multiversx.com',
@@ -34,25 +34,15 @@ type multiversxAppsType = {
 };
 
 export const multiversxApps: multiversxAppsType[] = [
-  {
+  /*{
     id: 'main-site',
     name: 'Main site',
     url: 'https://claws.network'
-  },
-  {
-    id: 'wallet',
-    name: 'Wallet',
-    url: 'https://wallet.claws.network'
-  },
+  },*/
   {
     id: 'explorer',
     name: 'Explorer',
     url: 'https://explorer.claws.network'
-  },
-  {
-    id: 'bridge',
-    name: 'Bridge',
-    url: 'https://bridge.multiversx.com'
   },
   {
     id: 'docs',
@@ -68,5 +58,5 @@ networks.forEach((network) => {
 });
 
 export const urls = {
-  skills: 'https://github.com/ClawsNetwork/skills'
+  skills: 'https://skills.claws.network'
 };
