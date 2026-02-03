@@ -1,35 +1,24 @@
-import React, { useEffect, useMemo, useRef } from 'react';
-import { useSelector } from 'react-redux';
-
 import {
-  ShardSpan,
-  NetworkLink,
-  TimeAgo,
-  Trim,
-  Loader,
+  AccountLink,
   LatestItem,
+  Loader,
+  NetworkLink,
   PulsatingLed,
+  ShardSpan,
+  TimeAgo,
   TransactionIcons,
   TransactionStatusIcon,
-  AccountLink,
-  ShardLink
+  Trim
 } from 'components';
 import { FailedTransactions } from 'components/TransactionsTable/components/FailedTransactions';
 import { NoTransactions } from 'components/TransactionsTable/components/NoTransactions';
 import { TransactionValue } from 'components/TransactionsTable/components/TransactionValue';
-import {
-  addressIsBech32,
-  formatLatestEntries,
-  getDisplayReceiver,
-  getTransactionStatusIconAndColor
-} from 'helpers';
+import { addressIsBech32, formatLatestEntries, getDisplayReceiver, getTransactionStatusIconAndColor } from 'helpers';
 import { useAdapter, useFetchTransactions, useIsSovereign } from 'hooks';
+import React, { useEffect, useMemo, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import { refreshSelector } from 'redux/selectors';
-import {
-  UITransactionType,
-  WebsocketEventsEnum,
-  WebsocketSubcriptionsEnum
-} from 'types';
+import { UITransactionType, WebsocketEventsEnum, WebsocketSubcriptionsEnum } from 'types';
 
 export const LatestTransactions = () => {
   const isSovereign = useIsSovereign();
@@ -138,12 +127,6 @@ export const LatestTransactions = () => {
                                 assets={receiverAssets}
                                 data-testid={`transactionLinkTo${i}`}
                               />
-                              <span className='px-2 text-muted ms-auto'>•</span>
-                              <ShardLink
-                                shard={transaction.receiverShard}
-                                transactionReceiverShard
-                                className='flex-shrink-0'
-                              />
                             </div>
                           </div>
 
@@ -156,14 +139,6 @@ export const LatestTransactions = () => {
                                     address={transaction.sender}
                                     assets={transaction.senderAssets}
                                     data-testid={`transactionLinkTo${i}`}
-                                  />
-                                  <span className='px-2 text-muted ms-auto'>
-                                    •
-                                  </span>
-                                  <ShardLink
-                                    shard={transaction.senderShard}
-                                    transactionSenderShard
-                                    className='flex-shrink-0'
                                   />
                                 </>
                               ) : (

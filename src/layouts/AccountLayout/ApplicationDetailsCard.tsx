@@ -1,32 +1,31 @@
-import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import BigNumber from 'bignumber.js';
-import { useSelector } from 'react-redux';
 
 import { ELLIPSIS } from 'appConstants';
 import DefaultImage from 'assets/img/default.svg';
+import BigNumber from 'bignumber.js';
 import {
+  AccountLink,
   CopyButton,
   FormatAmount,
-  NetworkLink,
-  ScAddressIcon,
-  Trim,
-  TimeAgo,
-  PropertyPill,
   FormatUSD,
-  AccountLink,
-  SocialIcons,
-  SocialWebsite,
   HeroDetailsCard,
   InfoTooltip,
-  ShardLink
+  NetworkLink,
+  PropertyPill,
+  ScAddressIcon,
+  SocialIcons,
+  SocialWebsite,
+  TimeAgo,
+  Trim
 } from 'components';
 
 import { DECIMALS } from 'config';
 import { isContract, urlBuilder } from 'helpers';
 import { useAdapter } from 'hooks';
 import { faExclamationTriangle } from 'icons/regular';
-import { activeNetworkSelector, accountSelector } from 'redux/selectors';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { accountSelector, activeNetworkSelector } from 'redux/selectors';
 import { AccountUpgradeType } from 'types';
 
 export const ApplicationDetailsCard = () => {
@@ -34,7 +33,6 @@ export const ApplicationDetailsCard = () => {
   const {
     address,
     balance,
-    shard,
     ownerAddress,
     developerReward,
     deployedAt,
@@ -151,12 +149,6 @@ export const ApplicationDetailsCard = () => {
               <ScAddressIcon initiator={address} />
               <Trim text={address} className='text-neutral-400' />
               <CopyButton text={address} />{' '}
-              <ShardLink
-                shard={shard}
-                data-testid='shardLink'
-                className='ms-2 text-nowrap'
-                hasParanthesis
-              />
             </>
           )
         },

@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import BigNumber from 'bignumber.js';
-import { Collapse } from 'react-bootstrap';
 
 import { METACHAIN_SHARD_ID } from 'appConstants';
+import BigNumber from 'bignumber.js';
 import {
-  NetworkLink,
-  TimeAgo,
-  Trim,
-  DetailItem,
-  CopyButton,
-  IdentityBlock,
   BlockGasUsed,
+  CopyButton,
+  DetailItem,
+  IdentityBlock,
+  NetworkLink,
   Overlay,
-  ShardLink
+  TimeAgo,
+  Trim
 } from 'components';
 import { formatDate, formatSize, urlBuilder } from 'helpers';
-import { useIsSovereign } from 'hooks';
 import { faChevronLeft, faChevronRight, faClock } from 'icons/regular';
+import React, { useEffect, useState } from 'react';
+import { Collapse } from 'react-bootstrap';
 import { UIBlockType } from 'types';
 
 function decodeHex(hex: string) {
@@ -40,7 +38,6 @@ export const BlockData = ({ block }: { block: UIBlockType }) => {
   const reservedText = block.reserved
     ? Buffer.from(block.reserved, 'base64').toString()
     : '';
-  const isSovereign = useIsSovereign();
 
   const toggleCollapseClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -120,11 +117,6 @@ export const BlockData = ({ block }: { block: UIBlockType }) => {
         </DetailItem>
         <DetailItem title='Transactions'>
           {block.txCount + ' transactions in this block'}
-        </DetailItem>
-        <DetailItem title={isSovereign ? 'Chain' : 'Shard'}>
-          <div className='d-flex'>
-            <ShardLink shard={block.shard} />
-          </div>
         </DetailItem>
         <DetailItem title='Size'>
           <Overlay

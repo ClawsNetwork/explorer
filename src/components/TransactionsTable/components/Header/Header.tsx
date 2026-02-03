@@ -1,18 +1,16 @@
 import classNames from 'classnames';
-import { useSelector } from 'react-redux';
 
 import {
   AgeColumnFilters,
-  FromColumnFilters,
-  ShardColumnFilters,
-  StatusColumnFilters,
-  MethodColumnFilters,
-  ToColumnFilters,
-  ValueColumnFilters,
   DirectionColumnFilters,
-  PauseRefreshButton
+  FromColumnFilters,
+  MethodColumnFilters,
+  PauseRefreshButton,
+  StatusColumnFilters,
+  ToColumnFilters,
+  ValueColumnFilters
 } from 'components';
-import { useIsSovereign } from 'hooks';
+import { useSelector } from 'react-redux';
 import { transactionsSelector } from 'redux/selectors';
 import { pauseTxRefresh, resumeTxRefresh } from 'redux/slices';
 import { TransactionTableType } from 'types';
@@ -24,7 +22,6 @@ export const Header = ({
   hasPauseButton,
   hasTxPreviewBtn
 }: TransactionTableType) => {
-  const isSovereign = useIsSovereign();
   const { isRefreshPaused } = useSelector(transactionsSelector);
 
   return (
@@ -36,15 +33,6 @@ export const Header = ({
         </th>
         <th scope='col'>
           Age <AgeColumnFilters inactiveFilters={inactiveFilters} />
-        </th>
-        <th scope='col'>
-          {isSovereign ? (
-            <>Chain</>
-          ) : (
-            <>
-              Shard <ShardColumnFilters inactiveFilters={inactiveFilters} />
-            </>
-          )}
         </th>
         <th scope='col'>
           From <FromColumnFilters inactiveFilters={inactiveFilters} />

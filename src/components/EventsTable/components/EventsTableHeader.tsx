@@ -1,13 +1,10 @@
-import { useSelector } from 'react-redux';
-
 import {
-  FromColumnFilters,
   AgeColumnFilters,
+  FromColumnFilters,
   IdentifierColumnFilters,
-  ShardFilter,
   PauseRefreshButton
 } from 'components';
-import { useIsSovereign } from 'hooks';
+import { useSelector } from 'react-redux';
 import { eventsSelector } from 'redux/selectors';
 import { pauseEventsRefresh, resumeEventsRefresh } from 'redux/slices';
 import { TransactionFiltersEnum, WithClassnameType } from 'types';
@@ -20,16 +17,12 @@ export const EventsTableHeader = ({
   inactiveFilters
 }: EventsTableHeaderUIType) => {
   const { isRefreshPaused } = useSelector(eventsSelector);
-  const isSovereign = useIsSovereign();
   return (
     <thead>
       <tr>
         <th scope='col'>Txn Hash</th>
         <th scope='col'>
           Age <AgeColumnFilters inactiveFilters={inactiveFilters} />
-        </th>
-        <th scope='col'>
-          <ShardFilter text={isSovereign ? 'Chain' : 'Shard'} />
         </th>
         <th scope='col' className='hash-xxl'>
           Address <FromColumnFilters inactiveFilters={inactiveFilters} />

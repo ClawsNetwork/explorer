@@ -1,24 +1,20 @@
-import { useSelector } from 'react-redux';
-
 import { ELLIPSIS } from 'appConstants';
 import {
-  NetworkLink,
-  TimeAgo,
-  Trim,
   BlockGasUsed,
+  ColSpanWrapper,
   IdentityBlock,
-  ShardLink,
-  ShardFilter,
+  Loader,
+  NetworkLink,
   Pager,
+  PageSize,
+  PauseRefreshButton,
   ShardSpan,
   TableWrapper,
-  PageSize,
-  ColSpanWrapper,
-  Loader,
-  PauseRefreshButton
+  TimeAgo,
+  Trim
 } from 'components';
 import { formatSize } from 'helpers';
-import { useIsSovereign } from 'hooks';
+import { useSelector } from 'react-redux';
 import { blocksSelector } from 'redux/selectors';
 import { pauseBlocksRefresh, resumeBlocksRefresh } from 'redux/slices/blocks';
 import { UIBlockType, WithClassnameType } from 'types';
@@ -44,7 +40,6 @@ export const BlocksTable = ({
   isDataReady
 }: BlocksTableUIType) => {
   const { isRefreshPaused } = useSelector(blocksSelector);
-  const isSovereign = useIsSovereign();
   const colSpan = showProposerIdentity ? 8 : 7;
 
   return (
@@ -75,9 +70,6 @@ export const BlocksTable = ({
                   <th>Block</th>
                   <th>Age</th>
                   <th>Txns</th>
-                  <th>
-                    <ShardFilter text={isSovereign ? 'Chain' : 'Shard'} />
-                  </th>
                   <th className='text-end'>Size</th>
                   <th className='text-end'>Gas Used</th>
                   <th className={showProposerIdentity ? '' : 'text-end'}>
@@ -131,13 +123,6 @@ export const BlocksTable = ({
                               <TimeAgo value={block.timestamp} tooltip />
                             </td>
                             <td>{block.txCount}</td>
-                            <td>
-                              <ShardLink
-                                shard={block.shard}
-                                data-testid={`blockShardLink${i}`}
-                                hasHighlight
-                              />
-                            </td>
                             <td className='text-end'>
                               {block.sizeTxs !== undefined
                                 ? formatSize(block.size + block.sizeTxs)

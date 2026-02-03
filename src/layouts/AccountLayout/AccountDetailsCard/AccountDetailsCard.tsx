@@ -1,40 +1,38 @@
-import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useDispatch, useSelector } from 'react-redux';
 
 import { ELLIPSIS, MAX_ACOUNT_TOKENS_BALANCE } from 'appConstants';
-import { NativeTokenSymbol } from 'components';
 import {
   CardItem,
   CopyButton,
   FormatAmount,
-  NetworkLink,
-  TimeAgo,
   InfoTooltip,
-  ShardLink
+  NativeTokenSymbol,
+  NetworkLink,
+  TimeAgo
 } from 'components';
 import {
-  urlBuilder,
-  formatHerotag,
   formatBigNumber,
+  formatHerotag,
   getTotalTokenUsdValue,
-  isValidAccountTokenValue
+  isValidAccountTokenValue,
+  urlBuilder
 } from 'helpers';
-import { useAdapter, useIsSovereign } from 'hooks';
+import { useAdapter } from 'hooks';
 import { faClock, faExclamationTriangle } from 'icons/regular';
 import {
-  faUser,
   faCoins,
-  faLayerGroup,
   faHexagonVerticalNft,
-  faShieldCheck
+  faShieldCheck,
+  faUser
 } from 'icons/solid';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
-  activeNetworkSelector,
+  accountExtraSelector,
   accountSelector,
-  accountExtraSelector
+  activeNetworkSelector
 } from 'redux/selectors';
-import { setAccountExtra, getInitialAccountExtraState } from 'redux/slices';
+import { getInitialAccountExtraState, setAccountExtra } from 'redux/slices';
 import { SortOrderEnum, TokenType } from 'types';
 
 import { AccountUsdValueCardItem } from './components/AccountUsdValueCardItem';
@@ -42,14 +40,12 @@ import { LockedAmountCardItem } from './components/LockedAmountCardItem';
 
 export const AccountDetailsCard = () => {
   const dispatch = useDispatch();
-  const isSovereign = useIsSovereign();
   const { account } = useSelector(accountSelector);
   const { accountExtra } = useSelector(accountExtraSelector);
   const {
     address,
     balance,
     nonce,
-    shard,
     scamInfo,
     assets,
     username,
@@ -243,12 +239,6 @@ export const AccountDetailsCard = () => {
             </CardItem>
             <CardItem title='NFTs' icon={faHexagonVerticalNft}>
               {formatBigNumber({ value: accountNftsCount })}
-            </CardItem>
-            <CardItem
-              title={isSovereign ? 'Chain' : 'Shard'}
-              icon={faLayerGroup}
-            >
-              <ShardLink shard={shard} data-testid='shardLink' />
             </CardItem>
             <CardItem title='Active Since' icon={faClock}>
               {firstTransactionDate ? (

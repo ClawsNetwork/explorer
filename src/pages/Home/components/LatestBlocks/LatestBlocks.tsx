@@ -1,19 +1,17 @@
-import React, { useEffect, useMemo, useRef } from 'react';
-import { useSelector } from 'react-redux';
-
 import {
-  NetworkLink,
-  TimeAgo,
-  Trim,
-  Loader,
   LatestItem,
+  Loader,
+  NetworkLink,
   PulsatingLed,
-  ShardLink
+  TimeAgo,
+  Trim
 } from 'components';
 import { FailedBlocks } from 'components/BlocksTable/components/FailedBlocks';
 import { NoBlocks } from 'components/BlocksTable/components/NoBlocks';
 import { formatLatestEntries, urlBuilder } from 'helpers';
 import { useAdapter, useFetchBlocks } from 'hooks';
+import React, { useEffect, useMemo, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import { activeNetworkSelector, refreshSelector } from 'redux/selectors';
 import { blocksRoutes } from 'routes';
 import {
@@ -105,11 +103,6 @@ export const LatestBlocks = () => {
                           Transactions:
                         </span>{' '}
                         {block.txCount}
-                        <span className='text-muted mx-2'>•</span>
-                        <ShardLink
-                          shard={block.shard}
-                          className='flex-shrink-0'
-                        />
                       </div>
                       <div className='d-flex flex-row mt-1'>
                         <span className='me-2 text-neutral-400'>Hash:</span>

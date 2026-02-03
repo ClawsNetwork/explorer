@@ -27,20 +27,20 @@ $cyan: $cyan-400;
 
 // scss-docs-start colors-map
 $colors: (
-  'blue': $blue,
-  'indigo': $indigo,
-  'purple': $purple,
-  'pink': $pink,
-  'red': $red,
-  'orange': $orange,
-  'yellow': $yellow,
-  'green': $green,
-  'teal': $teal,
-  'cyan': $cyan,
-  'black': $black,
-  'white': $white,
-  'gray': $neutral-600,
-  'neutral-dark': $neutral-950
+        'blue': $blue,
+        'indigo': $indigo,
+        'purple': $purple,
+        'pink': $pink,
+        'red': $red,
+        'orange': $orange,
+        'yellow': $yellow,
+        'green': $green,
+        'teal': $teal,
+        'cyan': $cyan,
+        'black': $black,
+        'white': $white,
+        'gray': $neutral-600,
+        'neutral-dark': $neutral-950
 );
 // scss-docs-end colors-map
 
@@ -58,15 +58,15 @@ $muted: $neutral-400;
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-  'primary': $primary,
-  'secondary': $secondary,
-  'success': $success,
-  'info': $info,
-  'warning': $warning,
-  'danger': $danger,
-  'light': $light,
-  'dark': $dark,
-  'muted': $muted
+        'primary': $primary,
+        'secondary': $secondary,
+        'success': $success,
+        'info': $info,
+        'warning': $warning,
+        'danger': $danger,
+        'light': $light,
+        'dark': $dark,
+        'muted': $muted
 );
 // scss-docs-end theme-colors-map
 
@@ -104,12 +104,12 @@ $prefix: '';
 // scss-docs-start spacer-variables-maps
 $spacer-val: $spacer * 2;
 $spacers: map-merge(
-  $spacers,
-  (
-    spacer: (
-      $spacer-val
-    )
-  )
+                $spacers,
+                (
+                        spacer: (
+                                $spacer-val
+                        )
+                )
 );
 // scss-docs-end spacer-variables-maps
 
@@ -142,12 +142,12 @@ $paragraph-margin-bottom: 1rem;
 
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
 );
 // scss-docs-end grid-breakpoints
 
@@ -163,8 +163,8 @@ $grid-breakpoints: (
 
 // scss-docs-start container-max-widths
 $container-max-widths: (
-  xl: 1200px,
-  xxl: 1272px
+        xl: 1200px,
+        xxl: 1272px
 );
 // scss-docs-end container-max-widths
 
@@ -188,9 +188,10 @@ $component-active-bg: $primary-400;
 // Font, line-height, and color for body text, headings, and more.
 
 $headings-font-family: 'Roobert Medium', 'Inter', Roboto, 'Helvetica Neue',
-  'Noto Sans', 'Liberation Sans', sans-serif;
+'Noto Sans', 'Liberation Sans', sans-serif;
 $font-family-sans-serif: 'Inter', Roboto, 'Helvetica Neue', 'Noto Sans',
-  'Liberation Sans', sans-serif;
+'Liberation Sans', sans-serif;
+$font-family-monospace: 'haxrcorp', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 $font-family-base: $font-family-sans-serif;
 
 $font-size-root: 16px;
@@ -375,8 +376,8 @@ $dropdown-font-size: $font-size-base;
 $dropdown-border-radius: 8px;
 $dropdown-border-width: $border-width;
 $dropdown-inner-border-radius: subtract(
-  $dropdown-border-radius,
-  $dropdown-border-width
+                $dropdown-border-radius,
+                $dropdown-border-width
 );
 $dropdown-divider-margin-y: $spacer * 0.5;
 $dropdown-item-padding-y: $spacer * 0.5;
@@ -428,8 +429,8 @@ $accordion-bg: $neutral-800;
 $accordion-border-width: 0;
 $accordion-border-radius: $border-radius;
 $accordion-inner-border-radius: subtract(
-  $accordion-border-radius,
-  $accordion-border-width
+                $accordion-border-radius,
+                $accordion-border-width
 );
 
 $accordion-button-color: $accordion-color;

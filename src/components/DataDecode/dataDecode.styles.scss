@@ -45,13 +45,14 @@
   }
 
   .textarea {
+    //noinspection CssInvalidPropertyValue
     -moz-appearance: textfield-multiline;
     -webkit-appearance: textarea;
     border: var(--border-width) solid var(--border-color);
     background-color: var(--neutral-800);
     color: var(--neutral-200);
     border-radius: var(--border-radius);
-    font-size: $font-size-base;
+    font-size: 20px;
     min-height: 4rem;
     height: 5.5rem;
     overflow: auto;
@@ -61,6 +62,7 @@
     resize: vertical;
     scrollbar-width: thin;
     overflow-x: hidden;
+    line-height: 1em;
 
     &:hover {
       border: var(--border-width) solid var(--border-color);

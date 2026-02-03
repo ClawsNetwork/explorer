@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import { NetworkLink, Trim, AccountLink, ShardLink, TimeAgo } from 'components';
+import { AccountLink, NetworkLink, TimeAgo, Trim } from 'components';
 import { urlBuilder } from 'helpers';
 import { UIEventType, WithClassnameType } from 'types';
 import { EventIdentifierBadge } from './EventIdentifierBadge';
@@ -10,7 +10,7 @@ export interface EventRowUIType extends WithClassnameType {
 }
 
 export const EventRow = ({ event }: EventRowUIType) => {
-  const { txHash, identifier, address, shardID, timestamp, isNew } = event;
+  const { txHash, identifier, address, timestamp, isNew } = event;
 
   return (
     <tr className={classNames('animated-row', { new: isNew })}>
@@ -27,16 +27,6 @@ export const EventRow = ({ event }: EventRowUIType) => {
       </td>
       <td className='text-neutral-400'>
         <TimeAgo value={timestamp} short tooltip />
-      </td>
-      <td>
-        <div className='d-flex align-items-center'>
-          <ShardLink
-            shard={shardID}
-            data-testid='shardFromLink'
-            transactionSenderShard
-            hasHighlight
-          />
-        </div>
       </td>
       <td>
         <AccountLink

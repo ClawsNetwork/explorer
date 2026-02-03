@@ -1,23 +1,18 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import {
   AccountLink,
-  ScAddressIcon,
-  NetworkLink,
-  TimeAgo,
-  Trim,
-  LockedTokenAddressIcon,
   AccountName,
+  LockedTokenAddressIcon,
+  NetworkLink,
+  ScAddressIcon,
+  TimeAgo,
   TransactionIcons,
-  ShardLink
+  Trim
 } from 'components';
 import {
-  urlBuilder,
   getDisplayReceiver,
-  getTransactionDirection
+  getTransactionDirection,
+  urlBuilder
 } from 'helpers';
-import { useIsSovereign } from 'hooks';
-import { faArrowRight } from 'icons/regular';
 import { TransactionDirectionEnum, UITransactionType } from 'types';
 
 import { TransactionDirection } from './TransactionDirection';
@@ -42,7 +37,6 @@ export const TransactionRow = ({
   showLockedAccounts,
   hasTxPreviewBtn
 }: TransactionRowType) => {
-  const isSovereign = useIsSovereign();
   const { receiver, receiverAssets } = getDisplayReceiver(transaction);
   const direction = getTransactionDirection({ transaction, address });
 
@@ -72,33 +66,6 @@ export const TransactionRow = ({
       <td className='text-neutral-400'>
         <TimeAgo value={transaction.timestamp} short tooltip />
       </td>
-      <td>
-        <div className='d-flex align-items-center'>
-          {isSovereign &&
-          transaction.senderShard === transaction.receiverShard ? (
-            <>Local Transaction</>
-          ) : (
-            <>
-              <ShardLink
-                shard={transaction.senderShard}
-                data-testid='shardFromLink'
-                transactionSenderShard
-                hasHighlight
-              />
-              <FontAwesomeIcon
-                icon={faArrowRight}
-                className='text-neutral-500 mx-2'
-              />
-              <ShardLink
-                shard={transaction.receiverShard}
-                data-testid='shardToLink'
-                transactionReceiverShard
-                hasHighlight
-              />
-            </>
-          )}
-        </div>
-      </td>
       <td className='sender text-truncate'>
         {direction === TransactionDirectionEnum.out ? (
           <div className='d-flex align-items-center'>
@@ -124,11 +91,7 @@ export const TransactionRow = ({
       </td>
       {showDirectionCol === true && (
         <td>
-          <TransactionDirection
-            transaction={transaction}
-            address={address}
-            hasHighlight
-          />
+          <TransactionDirection transaction={transaction} address={address} />
         </td>
       )}
 

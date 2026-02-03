@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'haxrcorp';
+  src: url('../fonts/haxrcorp-4089.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 .header-symbol {
   > svg {
     max-height: 5em;

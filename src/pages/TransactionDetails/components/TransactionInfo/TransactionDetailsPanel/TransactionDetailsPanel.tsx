@@ -1,37 +1,37 @@
 import BigNumber from 'bignumber.js';
-import { useSelector } from 'react-redux';
 
 import {
-  FormatAmount,
-  NetworkLink,
-  TransactionStatus,
-  DetailItem,
-  Trim,
-  CopyButton,
-  TransactionAction,
-  FormatUSD,
   AccountLink,
-  TransactionIcons
+  CopyButton,
+  DetailItem,
+  FormatAmount,
+  FormatUSD,
+  NetworkLink,
+  TransactionAction,
+  TransactionIcons,
+  TransactionStatus,
+  Trim
 } from 'components';
 import {
   formatAmount,
-  isContract,
-  getTransactionMethod,
-  getTotalTxTokenUsdValue,
   getDisplayReceiver,
-  getTransactionVisibleOperations
+  getTotalTxTokenUsdValue,
+  getTransactionMethod,
+  getTransactionVisibleOperations,
+  isContract
 } from 'helpers';
 import {
+  DataField,
   OperationsList,
   ScResultsList,
-  DataField,
   TransactionWarningMessage
 } from 'pages/TransactionDetails/components';
+import { useSelector } from 'react-redux';
 import { activeNetworkSelector } from 'redux/selectors';
 import {
-  TransactionType,
   TransactionActionCategoryEnum,
-  TransactionActionEnum
+  TransactionActionEnum,
+  TransactionType
 } from 'types';
 import { TxAge, TxFee, TxFrom, TxReceiver, TxTo } from './components';
 
@@ -100,11 +100,11 @@ export const TransactionDetailsPanel = ({
       </DetailItem>
 
       <DetailItem title='From'>
-        <TxFrom transaction={transaction} />
+        <TxFrom transaction={transaction} showShard={false} />
       </DetailItem>
 
       <DetailItem title='To'>
-        <TxTo transaction={transaction} />
+        <TxTo transaction={transaction} showShard={false} />
       </DetailItem>
 
       {receiver !== transaction.receiver && (

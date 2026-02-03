@@ -1,3 +1,13 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames';
+
+import { CopyButton } from 'components';
+import { faExclamationTriangle } from 'icons/regular';
+import {
+  DecodeMethodEnum,
+  getDecodedDataField,
+  MAX_DECODE_TX_DATA_LENGTH
+} from 'lib';
 import {
   Dispatch,
   ReactNode,
@@ -5,17 +15,7 @@ import {
   useEffect,
   useState
 } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
 import { Anchor, Dropdown } from 'react-bootstrap';
-
-import { CopyButton } from 'components';
-import { faExclamationTriangle } from 'icons/regular';
-import {
-  MAX_DECODE_TX_DATA_LENGTH,
-  DecodeMethodEnum,
-  getDecodedDataField
-} from 'lib';
 import { WithClassnameType } from 'types';
 
 export interface DataDecodeUIType extends WithClassnameType {
@@ -85,7 +85,12 @@ export const DataDecode = ({
         'has-decode': hasDecode
       })}
     >
-      <div className={classNames('form-control textarea', className)}>
+      <div
+        className={classNames(
+          'form-control textarea font-monospace',
+          className
+        )}
+      >
         {anchoredContent ? anchoredContent : displayValue}
       </div>
       {value && value !== 'N/A' && (

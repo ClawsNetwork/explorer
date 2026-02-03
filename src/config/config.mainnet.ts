@@ -19,7 +19,8 @@ export const networks: NetworkType[] = [
     nftExplorerAddress: 'https://xspotlight.com',
     apiAddress: 'https://api.claws.network',
     growthApi: 'https://tools.multiversx.com/growth-api',
-    hasExchangeData: false
+    hasExchangeData: false,
+    isSovereign: true
   },
 
   // Saved Custom Network Configs
