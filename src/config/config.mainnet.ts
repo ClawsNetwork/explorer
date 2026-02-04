@@ -77,6 +77,6 @@ networks.forEach((network) => {
 });
 
 export const urls = {
-  buy: 'https://claws.network',
+  buy: 'https://app.uniswap.org/swap?chain=base&inputCurrency=0xD88EaCC07C0782B0D2ab9Be3dBa3aaa6D6fe6b07&outputCurrency=NATIVE',
   skill: 'https://skill.claws.network'
 };
