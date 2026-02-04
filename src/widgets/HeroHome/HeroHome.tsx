@@ -1,5 +1,5 @@
 import { BRAND_NAME } from 'appConstants';
-import { Particles, Search } from 'components';
+import { Particles } from 'components';
 import { networks } from 'config';
 import { useIsMainnet } from 'hooks';
 import { useSelector } from 'react-redux';
@@ -7,7 +7,6 @@ import { activeNetworkSelector } from 'redux/selectors';
 import { NetworkIdEnum } from 'types';
 import {
   AccountsStatsCard,
-  BlockHeightStatsCard,
   BlockProgressRing,
   EpochProgressRing,
   TransactionsStatsCard,
@@ -32,17 +31,12 @@ export const HeroHome = () => {
             <h1 className='h2 mb-4 font-headings title'>
               {BRAND_NAME} {explorerTitle}
             </h1>
-            <Search />
           </div>
         </div>
-
         <div className='d-flex flex-column gap-3'>
-          <div className='row'>
+          <div className='row align-items-center'>
             <div className='col-lg-8'>
               <div className='d-flex flex-row flex-wrap w-100 gap-3'>
-                <div className='w-100'>
-                  <BlockHeightStatsCard />
-                </div>
                 <TransactionsStatsCard />
                 <AccountsStatsCard />
                 {isMainnet && import.meta.env.VITE_APP_MARKERS_API_URL && (

@@ -242,6 +242,14 @@ export const Links = (props: LinksPropsType) => {
         })}
 
         <Link
+          to={urls.buy}
+          className={'btn btn-sm btn-primary ms-3 me-2'}
+          role='menuitem'
+          target={'_blank'}
+        >
+          Buy $CLAW
+        </Link>
+        <Link
           to={urls.skill}
           className={'btn btn-sm btn-outline-primary ms-3 me-2'}
           role='menuitem'

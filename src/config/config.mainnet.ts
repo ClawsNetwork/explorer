@@ -38,20 +38,35 @@ type multiversxAppsType = {
 };
 
 export const multiversxApps: multiversxAppsType[] = [
-  /*{
-    id: 'main-site',
-    name: 'Main site',
-    url: 'https://claws.network'
-  },*/
   {
-    id: 'explorer',
-    name: 'Explorer',
-    url: 'https://explorer.claws.network'
+    id: 'website',
+    name: 'Website',
+    url: 'https://claws.network'
   },
   {
     id: 'docs',
     name: 'Docs',
     url: 'https://docs.claws.network'
+  },
+  {
+    id: 'github',
+    name: 'GitHub',
+    url: 'https://github.com/ClawsNetwork'
+  },
+  {
+    id: 'twitter',
+    name: '𝕏',
+    url: 'https://x.com/ClawsNetwork'
+  },
+  {
+    id: 'telegram',
+    name: 'Telegram',
+    url: 'https://t.me/claws_network'
+  },
+  {
+    id: 'farcaster',
+    name: 'Farcaster',
+    url: 'https://farcaster.xyz/clawsnetwork'
   }
 ];
 
@@ -62,5 +77,6 @@ networks.forEach((network) => {
 });
 
 export const urls = {
+  buy: 'https://claws.network',
   skill: 'https://skill.claws.network'
 };
