@@ -8,8 +8,8 @@ export * from './sharedConfig';
 export const networks: NetworkType[] = [
   {
     default: true,
-    id: 'claw-network',
-    name: 'Claw Network',
+    id: 'claws-network',
+    name: 'Claws Network',
     chainId: 'C',
     adapter: 'api',
     theme: 'default',
@@ -62,5 +62,5 @@ networks.forEach((network) => {
 });
 
 export const urls = {
-  skills: 'https://skills.claws.network'
+  skill: 'https://skill.claws.network'
 };

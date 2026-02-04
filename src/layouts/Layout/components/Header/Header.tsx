@@ -2,10 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { BRAND_NAME } from 'appConstants';
 import MultiversXLogo from 'assets/img/logo-full.svg';
-import MultiversXSymbol from 'assets/img/symbol.svg';
 import classNames from 'classnames';
 import { NetworkLink } from 'components';
-import { useGetExplorerTitle, useIsMainnet } from 'hooks';
 import { faGrid, faGrid2 } from 'icons/solid';
 import { memo, MouseEvent, useEffect, useState } from 'react';
 import { EcosystemMenu } from './components/EcosystemMenu';
@@ -13,9 +11,6 @@ import { Links } from './components/Links';
 import { HeaderPropsType } from './types';
 
 export const Header = memo((props: HeaderPropsType) => {
-  const isMainnet = useIsMainnet();
-  const explorerTitle = useGetExplorerTitle();
-
   const { onExpand } = props;
 
   const [menuActive, setMenuActive] = useState(false);
@@ -75,17 +70,10 @@ export const Header = memo((props: HeaderPropsType) => {
           className='logo'
           aria-label={`${BRAND_NAME} Explorer`}
         >
-          {isMainnet ? (
-            <span className='header-symbol'>
-              <MultiversXLogo />
-              <span className='header-title'>Claws Network Explorer</span>
-            </span>
-          ) : (
-            <span className='header-symbol'>
-              <MultiversXSymbol />
-              <span className='header-title'>{explorerTitle}</span>
-            </span>
-          )}
+          <span className='header-symbol'>
+            <MultiversXLogo />
+            <span className='header-title'>Claws Network Explorer</span>
+          </span>
         </NetworkLink>
       </div>
 

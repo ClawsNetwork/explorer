@@ -242,13 +242,12 @@ export const Links = (props: LinksPropsType) => {
         })}
 
         <Link
-          key={'skills'}
-          to={urls.skills}
+          to={urls.skill}
           className={'btn btn-sm btn-outline-primary ms-3 me-2'}
           role='menuitem'
           target={'_blank'}
         >
-          SKILLS.md
+          SKILL.md
         </Link>
       </Navbar>
     </>
