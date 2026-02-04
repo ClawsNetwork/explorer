@@ -8,19 +8,22 @@ export * from './sharedConfig';
 export const networks: NetworkType[] = [
   {
     default: true,
-    id: 'mainnet',
-    name: 'Mainnet',
-    chainId: '1',
+    id: 'claw-network',
+    name: 'Claw Network',
+    chainId: 'C',
     adapter: 'api',
     theme: 'default',
     egldLabel: 'CLAW',
     walletAddress: 'https://wallet.claws.network',
-    explorerAddress: 'https://claws.network',
+    explorerAddress: 'https://explorer.claws.network',
     nftExplorerAddress: 'https://xspotlight.com',
     apiAddress: 'https://api.claws.network',
     growthApi: 'https://tools.multiversx.com/growth-api',
     hasExchangeData: false,
-    isSovereign: true
+    isSovereign: true,
+    hrp: 'claw',
+    hasWebsocket: false,
+    refreshRate: 600
   },
 
   // Saved Custom Network Configs
@@ -43,7 +46,7 @@ export const multiversxApps: multiversxAppsType[] = [
   {
     id: 'explorer',
     name: 'Explorer',
-    url: 'https://claws.network'
+    url: 'https://explorer.claws.network'
   },
   {
     id: 'docs',
