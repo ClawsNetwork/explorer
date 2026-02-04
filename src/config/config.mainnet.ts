@@ -44,11 +44,6 @@ export const multiversxApps: multiversxAppsType[] = [
     url: 'https://claws.network'
   },
   {
-    id: 'docs',
-    name: 'Docs',
-    url: 'https://docs.claws.network'
-  },
-  {
     id: 'github',
     name: 'GitHub',
     url: 'https://github.com/ClawsNetwork'
