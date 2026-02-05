@@ -54,6 +54,11 @@ export const multiversxApps: multiversxAppsType[] = [
     url: 'https://x.com/ClawsNetwork'
   },
   {
+    id: 'substack',
+    name: 'Substack',
+    url: 'https://substack.com/@clawsnetwork'
+  },
+  {
     id: 'telegram',
     name: 'Telegram',
     url: 'https://t.me/claws_network'
