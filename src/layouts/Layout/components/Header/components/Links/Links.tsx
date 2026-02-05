@@ -3,12 +3,7 @@ import classNames from 'classnames';
 
 import { NetworkLink } from 'components';
 import { addressIsBech32, isContract } from 'helpers';
-import {
-  useActiveRoute,
-  useHasGrowthWidgets,
-  useIsMainnet,
-  useNetworkRoute
-} from 'hooks';
+import { useActiveRoute, useHasGrowthWidgets, useIsMainnet, useNetworkRoute } from 'hooks';
 import { faAngleDown } from 'icons/regular';
 import { useState } from 'react';
 import { Navbar, NavDropdown } from 'react-bootstrap';
@@ -240,7 +235,14 @@ export const Links = (props: LinksPropsType) => {
             </NetworkLink>
           );
         })}
-
+        <Link
+          to={'https://openbond.org'}
+          className={'btn btn-sm btn-outline-primary ms-3 me-2'}
+          role='menuitem'
+          target={'_blank'}
+        >
+          OpenBond
+        </Link>
         <Link
           to={urls.buy}
           className={'btn btn-sm btn-primary ms-3 me-2'}
