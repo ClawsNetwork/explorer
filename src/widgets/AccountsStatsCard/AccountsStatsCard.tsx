@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useSelector } from 'react-redux';
 
 import { POOLING_REFRESH_RATE_LIMIT } from 'appConstants';
 import { FormatNumber, InfoTooltip } from 'components';
 import { formatBigNumber } from 'helpers';
 import { useGetNewAccountsToday, useHasGrowthWidgets } from 'hooks';
 import { faCircleBolt } from 'icons/solid';
+import { useSelector } from 'react-redux';
 import { activeNetworkSelector, statsSelector } from 'redux/selectors';
 import { StatsCard } from 'widgets';
 
@@ -22,7 +22,7 @@ export const AccountsStatsCard = () => {
 
   return (
     <StatsCard
-      title='Total Accounts'
+      title='Agents'
       value={
         <FormatNumber
           value={accounts}
