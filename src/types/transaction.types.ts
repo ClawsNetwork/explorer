@@ -1,6 +1,5 @@
-import { ReactNode } from 'react';
-
 import { ELLIPSIS } from 'appConstants';
+import { ReactNode } from 'react';
 import { AccountAssetType } from './account.types';
 import { ScamInfoType, SliceType } from './general.types';
 import { NftTypeEnum } from './nft.types';
@@ -140,6 +139,11 @@ export enum TransactionFiltersEnum {
 
 // Avoid issues with differences between methods and actions
 export enum TransactionMethodsEnum {
+  // claws category
+  registerAgent = 'registerAgent',
+  bond = 'bond',
+  heartbeat = 'heartbeat',
+  emitSignal = 'emitSignal',
   // esdtNft category
   transfer = 'transfer',
   // stake category
@@ -165,6 +169,7 @@ export enum TransactionMethodsEnum {
   enterFarmAndLockRewardsProxy = 'enterFarmAndLockRewardsProxy',
   exitFarm = 'exitFarm',
   exitFarmProxy = 'exitFarmProxy',
+  // eslint-disable-next-line @typescript-eslint/no-duplicate-enum-values
   claimRewards = 'claimRewards',
   claimRewardsProxy = 'claimRewardsProxy',
   compoundRewards = 'compoundRewards',
@@ -411,6 +416,7 @@ export enum TransactionActionEnum {
   enterFarmAndLockRewardsProxy = 'enterFarmAndLockRewardsProxy',
   exitFarm = 'exitFarm',
   exitFarmProxy = 'exitFarmProxy',
+  // eslint-disable-next-line @typescript-eslint/no-duplicate-enum-values
   claimRewards = 'claimRewards',
   claimRewardsProxy = 'claimRewardsProxy',
   compoundRewards = 'compoundRewards',
