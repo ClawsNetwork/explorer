@@ -1,15 +1,15 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classNames from "classnames";
 
-import { NetworkLink } from 'components';
-import { addressIsBech32, isContract } from 'helpers';
-import { useActiveRoute, useHasGrowthWidgets, useIsMainnet, useNetworkRoute } from 'hooks';
-import { faAngleDown } from 'icons/regular';
-import { useState } from 'react';
-import { Navbar, NavDropdown } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
-import { activeNetworkSelector } from 'redux/selectors';
+import { NetworkLink } from "components";
+import { addressIsBech32, isContract } from "helpers";
+import { useActiveRoute, useHasGrowthWidgets, useIsMainnet, useNetworkRoute } from "hooks";
+import { faAngleDown } from "icons/regular";
+import { useState } from "react";
+import { Navbar, NavDropdown } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import { activeNetworkSelector } from "redux/selectors";
 import {
   accountsRoutes,
   analyticsRoutes,
@@ -22,10 +22,10 @@ import {
   transactionsInPoolRoutes,
   transactionsRoutes,
   validatorsRoutes
-} from 'routes';
-import { urls } from '../../../../../../config';
+} from "routes";
+import { urls } from "../../../../../../config";
 
-import { LinksPropsType, MenuLinkType } from './types';
+import { LinksPropsType, MenuLinkType } from "./types";
 
 export const Links = (props: LinksPropsType) => {
   const { onClick } = props;
@@ -237,7 +237,7 @@ export const Links = (props: LinksPropsType) => {
         })}
         <Link
           to={'https://openbond.org'}
-          className={'btn btn-sm btn-outline-primary ms-3 me-2'}
+          className={'menu-btn btn btn-sm btn-outline-primary'}
           role='menuitem'
           target={'_blank'}
         >
@@ -245,7 +245,7 @@ export const Links = (props: LinksPropsType) => {
         </Link>
         <Link
           to={urls.buy}
-          className={'btn btn-sm btn-primary ms-3 me-2'}
+          className={'menu-btn btn btn-sm btn-primary'}
           role='menuitem'
           target={'_blank'}
         >
@@ -253,7 +253,7 @@ export const Links = (props: LinksPropsType) => {
         </Link>
         <Link
           to={urls.skill}
-          className={'btn btn-sm btn-outline-primary ms-3 me-2'}
+          className={'menu-btn btn btn-sm btn-outline-primary'}
           role='menuitem'
           target={'_blank'}
         >

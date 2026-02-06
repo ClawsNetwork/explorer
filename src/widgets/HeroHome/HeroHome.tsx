@@ -1,5 +1,5 @@
 import { BRAND_NAME } from 'appConstants';
-import { Particles } from 'components';
+import { Particles, Search } from 'components';
 import { networks } from 'config';
 import { useIsMainnet } from 'hooks';
 import { useSelector } from 'react-redux';
@@ -31,6 +31,7 @@ export const HeroHome = () => {
             <h1 className='h2 mb-4 font-headings title'>
               {BRAND_NAME} {explorerTitle}
             </h1>
+            <Search />
           </div>
         </div>
         <div className='d-flex flex-column gap-3'>
